@@ -181,17 +181,18 @@ def main():
     parser = argparse.ArgumentParser()
 
     ## Required parameters
-    parser.add_argument("--data_dir", default=None, type=str, required=True,
+    parser.add_argument("--data_dir", default="/work/b07u1234/data_public/HW4_1_Data/HW4_1_1/dataset/xnli.examples.tsv", type=str, required=True,
                         help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
-    parser.add_argument("--model_type", default=None, type=str, required=True,
+    parser.add_argument("--model_type", default="bert", type=str, required=True,
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
-    parser.add_argument("--model_name_or_path", default=None, type=str, required=True,
+    #name_or_path,language,output_dir three confid need to be written
+    parser.add_argument("--model_name_or_path", default="bert", type=str, required=True,
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS))
     parser.add_argument("--language", default=None, type=str, required=True,
                         help="Evaluation language. Also train language if `train_language` is set to None.")
     parser.add_argument("--train_language", default=None, type=str,
                         help="Train language if is different of the evaluation language.")
-    parser.add_argument("--output_dir", default=None, type=str, required=True,
+    parser.add_argument("--output_dir", default="/work/b07u1234/b06502162/HW4-1", type=str, required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
 
     ## Other parameters
