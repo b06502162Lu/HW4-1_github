@@ -186,7 +186,7 @@ def main():
     parser.add_argument("--model_type", default="bert", type=str, 
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
     #name_or_path,language,output_dir three confid need to be written
-    parser.add_argument("--model_name_or_path", default="bert-base-chinese", type=str, 
+    parser.add_argument("--model_name_or_path", default="/work/b07u1234/data_public/HW4_1_Data/step1_output/output/try", type=str, 
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS))
     parser.add_argument("--language", default="zh", type=str, 
                         help="Evaluation language. Also train language if `train_language` is set to None.")
@@ -257,14 +257,14 @@ def main():
     parser.add_argument('--server_ip', type=str, default='', help="For distant debugging.")
     parser.add_argument('--server_port', type=str, default='', help="For distant debugging.")
     args = parser.parse_args()
-    """
-    if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train and not args.overwrite_output_dir:
+    
+    if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_eval and not args.overwrite_output_dir:
         raise ValueError("Output directory ({}) already exists and is not empty. Use --overwrite_output_dir to overcome.".format(args.output_dir))
+    
     """
-
     if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and False and not args.overwrite_output_dir:
         raise ValueError("Output directory ({}) already exists and is not empty. Use --overwrite_output_dir to overcome.".format(args.output_dir))
-
+    """
     # Setup distant debugging if needed
     if args.server_ip and args.server_port:
         # Distant debugging - see https://code.visualstudio.com/docs/python/debugging#_attach-to-a-local-script
