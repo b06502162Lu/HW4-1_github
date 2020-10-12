@@ -186,7 +186,7 @@ def main():
     parser.add_argument("--model_type", default="bert", type=str, 
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
     #name_or_path,language,output_dir three confid need to be written
-    parser.add_argument("--model_name_or_path", default="bert-base-chinese", type=str, 
+    parser.add_argument("--model_name_or_path", default="/work/b07u1234/data_public/HW4_1_Data/step1_output/output/try/checkpoint-24000", type=str, 
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS))
     parser.add_argument("--language", default="zh", type=str, 
                         help="Evaluation language. Also train language if `train_language` is set to None.")
