@@ -56,7 +56,7 @@ def Anisotropy_function(version):
     version have three option == "self-sim" , "intra-sentence-sim", "MEV(BONUS)" 
     """
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-pretrained-example-data.p")
 
     #Pretrained version
     record = []   
@@ -71,7 +71,7 @@ def Anisotropy_function(version):
     #Finetune version
     record = []  
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-finetune-example-data.p")
     
     for i in range(0, 13):
         cos = Anisotropy(samples,i,version) 
@@ -115,7 +115,7 @@ def cosine_similarity_Anisotropy(two_words):
 # Question 3 -main - IntraSentenceSimilarity
 def IntraSentenceSimilarity_function():
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []   
