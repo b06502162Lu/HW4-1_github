@@ -108,7 +108,12 @@ def cosine_similarity_Anisotropy(two_words):
     #print("This is a test : ",len(two_words))
     #print("test_size : ",len(two_words[0]),"   ||   ",len(two_words[1]),"  ||   ",type(two_words[0]))
     #print("test_for_value",two_words[0])
-    cos = torch.cosine_similarity(two_words[0], two_words[1], dim=0)
+    a =  np.asarray(two_words[0])
+    a = torch.from_numpy(a)
+    b =  np.asarray(two_words[1])
+    b = torch.from_numpy(b)
+
+    cos = torch.cosine_similarity(a, b, dim=0)
     print("cosine value : ",cos)
     """
     Todo: return two word cosine similarity
