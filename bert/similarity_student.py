@@ -105,7 +105,7 @@ def Anisotropy(data,layer_index,version):
 
 # Question 2
 def cosine_similarity_Anisotropy(two_words):
-    print("This is a test : ",two_words)
+    print("This is a test : ",two_words.size())
     cos = None
     """
     Todo: return two word cosine similarity
