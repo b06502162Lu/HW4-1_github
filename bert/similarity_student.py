@@ -108,13 +108,10 @@ def cosine_similarity_Anisotropy(two_words):
     #print("This is a test : ",len(two_words))
     #print("test_size : ",len(two_words[0]),"   ||   ",len(two_words[1]),"  ||   ",type(two_words[0]))
     #print("test_for_value",two_words[0])
-    a =  np.asarray(two_words[0])
-    a = torch.from_numpy(a)
-    b =  np.asarray(two_words[1])
-    b = torch.from_numpy(b)
+    cos_v = cosine_similarity([two_words[0][1],two_words[1][1]])[0]
 
-    cos = torch.cosine_similarity(a, b, dim=0)
-    print("cosine value : ",cos)
+    cos = np.mean(cos_v[1:])
+    
     """
     Todo: return two word cosine similarity
     """
@@ -151,12 +148,15 @@ def IntraSentenceSimilarity(data,layer_index):
     x_layer = preprocessing_intra_sentence(data,layer_index)
 
     average_cos = []
+    pre_sentence_emb= []
     for x in x_layer:
         """
         Todo: calculate intra-sentence cosine similarity
         """
-        cos = 0
-        average_cos += [ np.mean(cos)/x[3] ]
+        # (word, embedding, sentence_embedding,count)
+        cos_v = cosine_similarity([x[1],x[2]])[0]
+
+        average_cos += [ cos_v[1]/x[3] ]
     mean = sum(average_cos) / len(data)
     return mean 
 
@@ -207,8 +207,12 @@ def calculate_self_similarity(function,layer_index):
         Hint: You can write new function to do this or sklearn cosine similarity
         
         """
+        cos_v = cosine_similarity(same_word_embeddings)[0]
+        for i in range(1,len(cos_v)):
+            mean += cos_v[i]
         
-        total_average_cos += [np.mean(mean)]
+        total_average_cos += [mean/len(cos_v)]
+        #total_average_cos += [np.mean(mean)]
     return np.mean(np.array(total_average_cos))
 
 # Question 3
