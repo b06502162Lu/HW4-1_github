@@ -181,7 +181,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     ## Required parameters=
-    parser.add_argument("--data_dir", default="/work/b07u1234/data_public/HW4_1_Data/HW4_1_1/tmp", type=str, 
+    parser.add_argument("--data_dir", default="/work/b07u1234/data_public/HW4_1_Data/step1_output/output/try", type=str, 
                         help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
     parser.add_argument("--model_type", default="bert", type=str, 
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
