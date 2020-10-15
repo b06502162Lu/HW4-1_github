@@ -185,7 +185,7 @@ def main():
                         help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
     parser.add_argument("--model_type", default="bert", type=str, 
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
-    parser.add_argument("--model_name_or_path", default="/work/b07u1234/data_public/HW4_1_Data/HW4_1_1/tmp", type=str, 
+    parser.add_argument("--model_name_or_path", default="/work/b07u1234/data_public/HW4_1_Data/HW4_1_1/dataset", type=str, 
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS))
     #to be checked 
     parser.add_argument("--language", default="zh", type=str, 
