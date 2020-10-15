@@ -56,7 +56,7 @@ def Anisotropy_function(version):
     version have three option == "self-sim" , "intra-sentence-sim", "MEV(BONUS)" 
     """
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
 
     #Pretrained version
     record = []   
@@ -120,7 +120,7 @@ def cosine_similarity_Anisotropy(two_words):
 # Question 3 -main - IntraSentenceSimilarity
 def IntraSentenceSimilarity_function():
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []   
@@ -164,7 +164,7 @@ def IntraSentenceSimilarity(data,layer_index):
 def SelfSimilarity_function():
     
     # TA: You may need to modify to your pretrained data path
-    samples = load_data("xnli-pretrained-example-data.p")
+    samples = load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []
@@ -178,7 +178,7 @@ def SelfSimilarity_function():
     record = []  
 
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-finetune-example-data.p")
     for i in range(0, 13):
         self_similarity(samples,i,"finetune")
         layer_self_similarity = calculate_self_similarity("finetune",i)
@@ -248,7 +248,7 @@ def self_similarity(data,layer_index,function):
 # Question 4 -main - AnisotropyAdjustedSelfSimilarity
 def AnisotropyAdjustedSelfSimilarity_function():
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
 
     #Pretrained version
     record = []
@@ -262,7 +262,7 @@ def AnisotropyAdjustedSelfSimilarity_function():
     #finetune version
     record = []  
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     for i in range(0, 13):
         cos = Anisotropy(samples,i,version="self-sim") 
         self_similarity(samples,i,"finetune")
@@ -278,7 +278,7 @@ def AnisotropyAdjustedSelfSimilarity_function():
 # Question 4 -main - AnisotropyAdjustedIntraSentenceSimilarity
 def AnisotropyAdjustedIntraSentenceSimilarity_function():
     # TA: You may need to modify to your pretrained data path
-    samples =load_data("xnli-pretrained-example-data.p")
+    samples =load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []   
@@ -291,7 +291,7 @@ def AnisotropyAdjustedIntraSentenceSimilarity_function():
     #Finetuned version    
     record = []  
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-finetune-example-data.p")
     for i in tqdm(range(0, 13)):
        cos = Anisotropy(samples,i,version="intra-sentence-sim") 
        IntraSentenceSimilarity_cos = IntraSentenceSimilarity(samples,i) 
@@ -336,7 +336,7 @@ def MEV_Anisotropy(data):
 
 ### Bonus - 2:
 def MaximumExplainableVariance_function():
-    samples = load_data("xnli-pretrained-example-data.p")
+    samples = load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []
@@ -348,7 +348,7 @@ def MaximumExplainableVariance_function():
     #Finetuned version
     record = []  
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-finetune-example-data.p")
     for i in range(0, 13):
         layer_MEV = MEV("finetune",i)
         record += [(i,layer_MEV)]
@@ -361,7 +361,7 @@ def MaximumExplainableVariance_function():
 
 ### Bonus - 3:
 def AnisotropyAdjustedMEV_function():
-    samples = load_data("xnli-pretrained-example-data.p")
+    samples = load_data("/work/b07u1234/b06502162/HW4-1/HW4-1_github/bert/xnli-pretrained-example-data.p")
     
     #Pretrained version
     record = []
@@ -374,7 +374,7 @@ def AnisotropyAdjustedMEV_function():
     #finetune version
     record = []  
     #You may need to modify to your finetune data path
-    samples = load_data("xnli-finetune-example-data.p")
+    samples = load_data("/work/b07u1234/data_public/HW4_1_Data/step2_output/xnli-finetune-example-data.p")
     for i in range(0, 13):
         layer_MEV = MEV("finetune",i)
         mean_MEV = Anisotropy(samples,i,version="MEV")
