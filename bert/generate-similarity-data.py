@@ -121,9 +121,9 @@ def evaluate(args, model, tokenizer, prefix=""):
                     new_dataset += [copy.deepcopy(sample)]
 
     # if u want to extract pretrained model embedding use name: pretrained-example-data.p  and comment line 126
-    pickle.dump(new_dataset,open("xnli-pretrained-example-data.p","wb"))
+    #pickle.dump(new_dataset,open("xnli-pretrained-example-data.p","wb"))
     # if u want to extract pretrained model embedding use name: finetune-example-data.p and comment line 124
-    #pickle.dump(new_dataset,open("xnli-finetune-example-data.p","wb"))
+    pickle.dump(new_dataset,open("xnli-finetune-example-data.p","wb"))
 
     return 
 
@@ -185,7 +185,7 @@ def main():
                         help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
     parser.add_argument("--model_type", default="bert", type=str, 
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
-    parser.add_argument("--model_name_or_path", default="bert-base-chinese", type=str, 
+    parser.add_argument("--model_name_or_path", default="saved model", type=str, 
                         help="Path to pre-trained model or shortcut name selected in the list: " + ", ".join(ALL_MODELS))
     #to be checked 
     parser.add_argument("--language", default="zh", type=str, 
