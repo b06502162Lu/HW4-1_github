@@ -17,7 +17,7 @@ export NUM_EPOCHS=3
 export SAVE_STEPS=750
 export SEED=1
 
-python3 run_ner.py --data_dir ./ \
+python3 run_ner.py --data_dir /work/b07u1234/data_public/HW4_1_Data/CWS_dlhlp
 --model_type bert \
 --labels ./labels.txt \
 --model_name_or_path $BERT_MODEL \
